@@ -3649,3 +3649,6 @@ inner_pg_right .read_more{
   margin-top:50px;
 }
 p.nocomments, #respond h3 { display: none; } 
+.no-bdr{
+   border-top:0px !important;
+}

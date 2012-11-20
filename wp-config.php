@@ -22,7 +22,8 @@ define('DB_NAME', 'zc_mawj');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'ZapnaLHR#@!');
+//define('DB_PASSWORD', '@wsxzaQ1');
+define('DB_PASSWORD', '');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');

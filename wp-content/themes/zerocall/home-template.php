@@ -14,34 +14,46 @@ get_header(); ?>
 		
               <div class="body_inner1"> 
 			   <?php 
+			    $bdrclass = false;
 				$post_id = '63';
-				$queried_post = get_post(icl_object_id($post_id));
-				$title = $queried_post->post_title;
-				 echo  $queried_post->post_content;
+				$lang_post_id = icl_object_id($post_id);
+				if(isset($lang_post_id) && $lang_post_id!=NULL){
+				  $queried_post = get_post($lang_post_id);					
+				  $title = $queried_post->post_title;
+				  echo  $queried_post->post_content;
+				  $bdrclass = true;
+				} 
                 ?>
                 <div class="demo_btn">
-                   <?php 
-				$pg_id = '841';
-				$queried_post = get_post(icl_object_id($pg_id));
-				$title = $queried_post->post_title;
-				 echo  $queried_post->post_content;
+                <?php 
+					$pg_id = '841';
+					$lang_pg_id = icl_object_id($pg_id);
+					if(isset($lang_pg_id) && $lang_pg_id!=NULL){
+					  $queried_post = get_post($lang_pg_id);					
+					  $title = $queried_post->post_title;
+					  echo  $queried_post->post_content;
+					  $bdrclass = true;
+					} 
                 ?>
                 </div>
               </div>  
               
                 <br clear="all" />
-                <div class="price_inner">
+                <div class="price_inner  <?php echo ($bdrclass)?"":"no-bdr";?>">
                 <div class="price1">
                   <div class="blockheight">
 					<?php 
                         $p_id = '304';
-                        $p_data = get_post(icl_object_id($p_id));					
-                        $page_title = $p_data->post_title;
+						$lang_pg_id = icl_object_id($p_id);
+					      if(isset($lang_pg_id) && $lang_pg_id!=NULL){
+						    $queried_post = get_post($lang_pg_id);					
+                            $page_title = $queried_post->post_title;
                     ?>
-                    <h2><?php echo $page_title;?></h2>
-                    <?php	
-                     echo  $p_data->post_content;
-                    ?>
+					      <h2><?php echo $page_title;?></h2>
+                         <?php echo  $queried_post->post_content; ?>
+					<?php							
+						  }
+                    ?>                      
                    </div> 
                     <div class="btn"><a href="<?php echo get_permalink($p_id);?>">read more</a></div>
                   </div>  
@@ -49,7 +61,8 @@ get_header(); ?>
                     <div class="blockheight">
 					<?php 
                         $p_post_id = '308';
-                        $p_post_data = get_post(icl_object_id($p_post_id));					
+						$ppost = icl_object_id($p_post_id);
+                        $p_post_data = get_post($ppost);					
                         $page_title = $p_post_data->post_title;
                     ?>
                     <h2><?php echo $page_title;?></h2>
@@ -57,7 +70,7 @@ get_header(); ?>
                      echo  $p_post_data->post_content;
                     ?>
                      </div>
-                    <div class="btn"><a href="<?php echo get_permalink($p_id);?>">read more</a></div>
+                    <div class="btn"><a href="<?php echo get_permalink($ppost);?>">read more</a></div>
                   </div>  
                     <div class="price2" style="border:0;">                       
 		                 <?php include 'price-calculator.php';?>

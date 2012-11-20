@@ -179,7 +179,7 @@ function show_nivo_slider() {
 	right:0px;
 }
 .nivo-controlNav {
-	bottom:6px;	
+	bottom:17px;	
 	left:50%;
 	position:absolute;
 }
@@ -261,7 +261,7 @@ jQuery(window).load(function() {
 	<?php if(has_post_thumbnail()) : ?>
 		<?php //the_post_thumbnail(); ?>
         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-        <img src="<?php echo $image[0];?>" width="976" height="349" alt="<?php the_title();?>" title="#<?php the_ID()?>" />
+        <img src="<?php echo $image[0];?>" width="990" height="374" alt="<?php the_title();?>" title="#<?php the_ID()?>" />
 	<?php endif ?>
     
 	<?php endwhile; ?>

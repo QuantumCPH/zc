@@ -25,7 +25,7 @@ class price_calculator extends WP_Widget
 		// protects any already created local variables
 		extract( $args, EXTR_SKIP );
 		
-		$post_id = '899';//905;//'899';
+		$post_id = '905';//905;//'899';
         $queried_post = get_page($post_id);
        
         $title_post = $queried_post->post_title;  
